@@ -6,10 +6,17 @@ AOS.init();
 const experiencecards = document.querySelector(".experience-cards");
 const exp = [
   {
+    title: "Backend Developer(SQL)",
+    cardImage: "assets/images/experience-page/TL.jpeg",
+    place: "TL Technologies",
+    time: "(Apr 2023 - Present)",
+    desp: "<li>As a SQL Developer, I designed ER diagrams, developed efficient table schemas, and optimized stored procedures. I also skillfully hosted Node.js, .NET, and React applications using IIS, ensuring seamless integration between front-end and back-end systems</li>",
+  },
+  {
     title: "Data Science Intern",
     cardImage: "assets/images/experience-page/logo.jpg",
     place: "Brototype",
-    time: "(Oct 2022 - Present)",
+    time: "(Oct 2022 - Apr 2023)",
     desp: "<li>Worked on a project to create a fully functioning E-commerce Website using Python Django</li>",
   },
   {

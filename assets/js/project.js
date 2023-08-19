@@ -6,6 +6,20 @@ const projectcards = document.querySelector(".projectcards");
 // Array of object for projects
 const projects = [
   {
+    title: "EveryHome-Mobile Application (Company Project)",
+    cardImage: "assets/images/project-page/everyhome.png",
+    description: "Designed an Entity-Relationship diagram to visualize data relationships and optimize schema design. Played a pivotal role in enhancing cross-functional communication and enabling efficient data management.",
+    tagimg: "https://cdn.iconscout.com/icon/free/png-512/react-1-282599.png",
+    Previewlink: "https://everyhome.live/",
+  },
+  {
+    title: "Kerala Drives (Company Project)",
+    cardImage: "assets/images/project-page/keralaDrives.png",
+    description: "As a project contributor, I actively participated in developing the website's front-end using HTML, CSS, and Bootstrap. I created multiple pages, ensured their functionality, and handled the deployment to the production environment, making the website live and accessible to users.",
+    tagimg: "https://cdn.iconscout.com/icon/free/png-512/react-1-282599.png",
+    Previewlink: "https://www.keraladrives.com/",
+  },
+  {
     title: "Youtube Clone",
     cardImage: "assets/images/project-page/youtube-logo.jpg",
     description: "Static webpage using HTML and CSS",
@@ -14,7 +28,7 @@ const projects = [
     Githublink: "https://github.com/sree-hari-s/Youtube-Clone",
   },
   {
-    title: "Google Homepage Clone",
+    title: "Google Clone",
     cardImage: "assets/images/project-page/google-image.jpg",
     description: "Static webpage using HTML and CSS",
     tagimg: "https://image.flaticon.com/icons/png/512/643/643350.png",
@@ -35,35 +49,40 @@ const projects = [
 const showCards = () => {
   let output = "";
   projects.forEach(
-    ({ title, cardImage, tags, Previewlink, Githublink }) => {
-      (output += `       
-        <div class="column skill-card card" style="margin: 15px"data-aos="zoom-in-up" data-aos-easing="linear" data-aos-delay="300" data-aos-duration="600" >
+    ({
+      title,
+      cardImage,
+      description,
+      Previewlink,
+      Githublink
+    }) => {
+      output += `       
+        <div class="column skill-card card" style="margin: 15px" data-aos="zoom-in-up" data-aos-easing="linear" data-aos-delay="300" data-aos-duration="600">
           <div class="wrapper" style="background: url(${cardImage}) center / cover no-repeat;">
-            <div class="header">
-            </div>
+            <div class="header"><h1 class="title"><a href="#">${title}</a></h1></div>
             <div class="data">
               <div class="content">
-              <div class="title-div">
-                <h1 class="title"><a href="#">${title}</a></h1>
+                <div class="title-div">              
+                  <p class="description">${description}</p>
                 </div>
-            <ul class="menu-content"><br>
-                  <li><a href="${Previewlink}" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="25" viewBox="0 0 30 28" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-monitor"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg></a></li>
-                  <li><a href="${Githublink}" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="25" viewBox="0 0 30 28" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a></li>
+                <ul class="menu-content">
+                  ${Previewlink ? `<li><a href="${Previewlink}" class="social-icon" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="25" viewBox="0 0 30 28" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-monitor"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg></a></li>` : ''}
+                  ${Githublink ? `<li><a href="${Githublink}" class="social-icon" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="25" viewBox="0 0 30 28" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a></li>` : ''}
                 </ul>
               </div>
             </div>
           </div>
-        </div>`
-      )
+        </div>`;
     }
   );
   projectcards.innerHTML = output;
 };
+
 document.addEventListener("DOMContentLoaded", showCards);
 
 function myFunction() {
   // Declare variables
-  var input, button, i, skillcard, card, title;
+  var input, i, skillcard, card, title;
   input = document.getElementById("myInput").value;
   input = input.toUpperCase();
   skillcard = document.getElementsByClassName("skill-card");
@@ -71,16 +90,15 @@ function myFunction() {
   title = document.getElementsByClassName("title");
 
   // Loop through all list items, and hide those who don't match the search query
-  for (i = 0; i < button.length; i++) {
+  for (i = 0; i < skillcard.length; i++) {
     if (
-      button[i].innerHTML.toUpperCase().includes(input) ||
-      title[i].innerHTML.toUpperCase().includes(input)
+      title[i].innerText.toUpperCase().includes(input)
     ) {
-      skillcard[i].style.display = "";
-      card[i].style.display = "";
+      skillcard[i].style.display = "block"; // Show the card
+      card[i].style.display = "block"; // Show the card
     } else {
-      skillcard[i].style.display = "none";
-      card[i].style.display = "none";
+      skillcard[i].style.display = "none"; // Hide the card
+      card[i].style.display = "none"; // Hide the card
     }
   }
 }

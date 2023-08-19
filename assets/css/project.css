@@ -365,7 +365,7 @@ input[type="text"] {
 }
 
 .skill-card .title a {
-    color: #fff;
+    color: grey;
 }
 
 
@@ -404,7 +404,9 @@ ul {
     /* margin: 1rem auto; */
 }
 
-
+.description {
+    font-size: 16px; /* Change this value to your desired size */
+  }
 /* Responsive*/
 
 @media (min-width:320px) and (max-width:321px) {
